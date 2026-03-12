@@ -1,22 +1,22 @@
-[![Release](https://img.shields.io/github/v/release/bcgsc/nanosim?include_prereleases)](https://github.com/bcgsc/NanoSim/releases)
-[![Downloads](https://img.shields.io/github/downloads/bcgsc/Nanosim/total?logo=github)](https://github.com/bcgsc/NanoSim/archive/v3.0.0.zip)
+[![Release](https://img.shields.io/github/v/release/BirolLab/nanosim?include_prereleases)](https://github.com/BirolLab/NanoSim/releases)
+[![Downloads](https://img.shields.io/github/downloads/BirolLab/Nanosim/total?logo=github)](https://github.com/BirolLab/NanoSim/archive/v3.0.0.zip)
 [![Conda](https://img.shields.io/conda/dn/bioconda/nanosim?label=Conda)](https://anaconda.org/bioconda/nanosim)
-[![Stars](https://img.shields.io/github/stars/bcgsc/NanoSim.svg)](https://github.com/bcgsc/NanoSim/stargazers)  
+[![Stars](https://img.shields.io/github/stars/BirolLab/NanoSim.svg)](https://github.com/BirolLab/NanoSim/stargazers)  
 
-![NanoSim](https://github.com/bcgsc/NanoSim/blob/master/NanoSim_logo.png)
+![NanoSim](https://github.com/BirolLab/NanoSim/blob/master/NanoSim_logo.png)
 
 NanoSim is a fast and scalable read simulator that captures the technology-specific features of ONT data, and allows for adjustments upon improvement of nanopore sequencing technology.  
 
 The second version of NanoSim (v2.0.0) uses minimap2 as default aligner to align long genomic ONT reads to reference genome. It leads to much faster alignment step and reduces the overall runtime of NanoSim. We also utilize HTSeq, a python package, to read SAM alignment files efficiently.
 
-NanoSim [(v2.5)](https://github.com/bcgsc/NanoSim/releases/tag/v2.5.1) is able to simulate ONT transcriptome reads (cDNA / direct RNA) as well as genomic reads. It also models features of the library preparation protocols used, including intron retention (IR) events in cDNA and directRNA reads. Further, it has stand-alone modes which profiles transcript expression patterns and detects IR events in custom datasets. Additionally, we improved the homopolymer simulation option which simulates homopolymer expansion and contraction events with respect to chosen basecaller. Multiprocessing option allows for faster runtime for large library simulation.  
+NanoSim [(v2.5)](https://github.com/BirolLab/NanoSim/releases/tag/v2.5.1) is able to simulate ONT transcriptome reads (cDNA / direct RNA) as well as genomic reads. It also models features of the library preparation protocols used, including intron retention (IR) events in cDNA and directRNA reads. Further, it has stand-alone modes which profiles transcript expression patterns and detects IR events in custom datasets. Additionally, we improved the homopolymer simulation option which simulates homopolymer expansion and contraction events with respect to chosen basecaller. Multiprocessing option allows for faster runtime for large library simulation.  
 
-NanoSim [(v2.6)](https://github.com/bcgsc/NanoSim/releases/tag/v2.6.0) is able to simulate ONT reads in fastq format. The base quality information is simulated with truncated log-normal distributions, learnt separately from match bases, mismatch bases, insertion bases, deletion bases, and unaligned bases, each from different basecaller and read type.  
+NanoSim [(v2.6)](https://github.com/BirolLab/NanoSim/releases/tag/v2.6.0) is able to simulate ONT reads in fastq format. The base quality information is simulated with truncated log-normal distributions, learnt separately from match bases, mismatch bases, insertion bases, deletion bases, and unaligned bases, each from different basecaller and read type.  
 
-NanoSim [(v3.0)](https://github.com/bcgsc/NanoSim/releases/tag/v3.0.0) is able to simulate ONT metagenome reads. It quantifies metagenome abundance in the characterization stage, and accomodates for chimeric reads. In the simulation stage, it simulates both features as well. In addition, the simulation of chimeric reads is available in genome mode too. Some pre-trained models are re-trained for compatibility issues.
+NanoSim [(v3.0)](https://github.com/BirolLab/NanoSim/releases/tag/v3.0.0) is able to simulate ONT metagenome reads. It quantifies metagenome abundance in the characterization stage, and accomodates for chimeric reads. In the simulation stage, it simulates both features as well. In addition, the simulation of chimeric reads is available in genome mode too. Some pre-trained models are re-trained for compatibility issues.
 
 > **_NOTE:_**
-> We usually add new pre-trained models and make them available through the latest releases! Users can choose to download the whole package or only scripts without models to speed it up. Please check the [downloads](https://github.com/bcgsc/NanoSim/edit/master/README.md#downloads) section for more information regarding the pre-trained models.
+> We usually add new pre-trained models and make them available through the latest releases! Users can choose to download the whole package or only scripts without models to speed it up. Please check the [downloads](https://github.com/BirolLab/NanoSim/edit/master/README.md#downloads) section for more information regarding the pre-trained models.
 
 ##
 ![Citation](https://img.shields.io/badge/NanoSim-manuscript-ff69b4)  
@@ -69,7 +69,7 @@ conda install -c bioconda nanosim
 ```
  
 Option 2. Install the development code in our repo:
-1. `git clone https://github.com/bcgsc/NanoSim.git`  
+1. `git clone https://github.com/BirolLab/NanoSim.git`  
 2. `conda create --name nanosim python=3.7`
 3. `conda activate nanosim`
 4. `conda install --file requirements.txt -c conda-forge -c bioconda`
@@ -90,15 +90,15 @@ Option 2. Install the development code in our repo:
 
 For **releases before v2.2.0**, we provide profiles trained for _E. coli_ or _S. cerevisiae_ datasets. Flowcell chemistry is R7.3 and R9, and they were basecalled by Metrichor. They can be downloaded from **[our ftp site](http://www.bcgsc.ca/downloads/supplementary/NanoSim/)**
 
-For **release v2.5.0 and onwards**, we provide profiles trained for _H. sapiens_ NA12878 gDNA, cDNA 1D2, and directRNA datasets, _Mus. musculus_ cDNA dataset, and the ZymoBIOMICS mock community datasets with 10 species and two abundance levels. Flowcell chemistry is R9.4 for all datasets. NA12878 gDNA and directRNA were basecalled by Guppy 3.1.5; NA12878 cDNA 1D2 was basecalled by Albacore 2.3.1; mouse cDNA was basecalled by Metrichor. These models are available within **[pre-trained_models folder](https://github.com/bcgsc/NanoSim/tree/master/pre-trained_models)**.  
+For **release v2.5.0 and onwards**, we provide profiles trained for _H. sapiens_ NA12878 gDNA, cDNA 1D2, and directRNA datasets, _Mus. musculus_ cDNA dataset, and the ZymoBIOMICS mock community datasets with 10 species and two abundance levels. Flowcell chemistry is R9.4 for all datasets. NA12878 gDNA and directRNA were basecalled by Guppy 3.1.5; NA12878 cDNA 1D2 was basecalled by Albacore 2.3.1; mouse cDNA was basecalled by Metrichor. These models are available within **[pre-trained_models folder](https://github.com/BirolLab/NanoSim/tree/master/pre-trained_models)**.  
 
-For **release v3.1.1**, we provide a trained model for _H. sapiens_ NA24385 - AshkenazimTrio - Son (hg002) which is sequenced using Kit **v14** (R10 chemistry) and basecalled by dorado. You may find the trained model on 1 Million subsampled reads on the GitHub page (available along with the other models at **[pre-trained_models folder](https://github.com/bcgsc/NanoSim/tree/master/pre-trained_models)**). If you are interested in the trained model based on the whole dataset, you can get it through **[Zenodo - DOI: 10.5281/zenodo.10064740](https://zenodo.org/records/10064741)**. The model is trained using `NanoSim v3.0.2` with `scikit-learn v0.23.2` and `python v3.7.10`.
+For **release v3.1.1**, we provide a trained model for _H. sapiens_ NA24385 - AshkenazimTrio - Son (hg002) which is sequenced using Kit **v14** (R10 chemistry) and basecalled by dorado. You may find the trained model on 1 Million subsampled reads on the GitHub page (available along with the other models at **[pre-trained_models folder](https://github.com/BirolLab/NanoSim/tree/master/pre-trained_models)**). If you are interested in the trained model based on the whole dataset, you can get it through **[Zenodo - DOI: 10.5281/zenodo.10064740](https://zenodo.org/records/10064741)**. The model is trained using `NanoSim v3.0.2` with `scikit-learn v0.23.2` and `python v3.7.10`.
 
-For **release v3.2.1**, we provide a [trained model](https://github.com/bcgsc/NanoSim/tree/master/pre-trained_models) for _H. sapiens_ NA24385  - AshkenazimTrio - Son (hg002) which is sequenced using Kit **v14** (R10 chemistry) and basecalled by dorado (human_giab_hg002_sub1M_kitv14_dorado_v3.2.1.tar.gz). The model is trained using `NanoSim v3.2.1` with `python 3.7` and `scikit-learn v0.23.2`.
+For **release v3.2.1**, we provide a [trained model](https://github.com/BirolLab/NanoSim/tree/master/pre-trained_models) for _H. sapiens_ NA24385  - AshkenazimTrio - Son (hg002) which is sequenced using Kit **v14** (R10 chemistry) and basecalled by dorado (human_giab_hg002_sub1M_kitv14_dorado_v3.2.1.tar.gz). The model is trained using `NanoSim v3.2.1` with `python 3.7` and `scikit-learn v0.23.2`.
 
-For **release v3.2.2**, we provide [trained models](https://github.com/bcgsc/NanoSim/tree/master/pre-trained_models) for the ZymoBIOMICS mock community datasets with 10 species and two abundance levels. We also provide a trained model for _H. sapiens_ NA12878 cDNA (rel2 release, base-called using guppy v4.2.2) ONT data on [Zenodo](https://doi.org/10.5281/zenodo.14042982). The models are trained using `NanoSim v3.2.2` with `python 3.7` and `scikit-learn v0.23.2`.
+For **release v3.2.2**, we provide [trained models](https://github.com/BirolLab/NanoSim/tree/master/pre-trained_models) for the ZymoBIOMICS mock community datasets with 10 species and two abundance levels. We also provide a trained model for _H. sapiens_ NA12878 cDNA (rel2 release, base-called using guppy v4.2.2) ONT data on [Zenodo](https://doi.org/10.5281/zenodo.14042982). The models are trained using `NanoSim v3.2.2` with `python 3.7` and `scikit-learn v0.23.2`.
 
-**If you have any issues using the pre-trained models, check the [dependencies](https://github.com/bcgsc/NanoSim#dependencies) section for some information and tips.**
+**If you have any issues using the pre-trained models, check the [dependencies](https://github.com/BirolLab/NanoSim#dependencies) section for some information and tips.**
 
 ## Usage
 NanoSim is implemented using Python for error model fitting, read length analysis, and simulation. The first step of NanoSim is read characterization, which provides a comprehensive alignment-based analysis, and generates a set of read profiles serving as the input to the next step, the simulation stage. The simulation tool uses the model built in the previous step to produce in silico reads for a given reference genome/transcriptome. It also outputs a list of introduced errors, consisting of the position on each read, error type and reference bases.

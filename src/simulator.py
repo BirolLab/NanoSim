@@ -43,8 +43,7 @@ import math
 PYTHON_VERSION = sys.version_info
 VERSION = "3.2.3"
 PROGRAM = "NanoSim"
-AUTHOR = "Chen Yang, Saber Hafezqorani, Ka Ming Nip, and Theodora Lo (UBC & BCGSC)"
-CONTACT = "cheny@bcgsc.ca; shafezqorani@bcgsc.ca; kmnip@bcgsc.ca"
+AUTHOR = "Chen Yang, Saber Hafezqorani, Ka Ming Nip, and Theodora Lo (UBC & BC Cancer)"
 
 BASES = ['A', 'T', 'C', 'G']
 

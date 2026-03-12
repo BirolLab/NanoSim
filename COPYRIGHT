@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: NanoSim 
-Upstream-Contact: Chen Yang <cheny@bcgsc.ca>
-Source: https://github.com/bcgsc/Nanosim
+Upstream-Contact: Lauren Coombe <lcoombe@bccrc.ca>
+Source: https://github.com/BirolLab/Nanosim
 
 License: GPL-3
  This program is free software: you can redistribute it and/or modify
