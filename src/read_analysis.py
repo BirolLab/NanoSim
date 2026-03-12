@@ -34,8 +34,7 @@ from subprocess import DEVNULL
 PYTHON_VERSION = sys.version_info
 VERSION = "3.2.3"
 PROGRAM = "NanoSim"
-AUTHOR = "Chen Yang, Saber Hafezqorani, Ka Ming Nip, and Theodora Lo (UBC & BCGSC)"
-CONTACT = "cheny@bcgsc.ca; shafezqorani@bcgsc.ca; kmnip@bcgsc.ca"
+AUTHOR = "Chen Yang, Saber Hafezqorani, Ka Ming Nip, and Theodora Lo (UBC & BC Cancer)"
 
 
 # Taken from https://github.com/lh3/readfq
